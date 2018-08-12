@@ -1,5 +1,6 @@
 package tsebomokoena.trackstep
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
@@ -57,6 +58,13 @@ class Dashboard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
             })
             Snackbar.make(view, value!!, Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
+        }
+
+        val mapButton = findViewById<View>(R.id.btnLocation)
+        val mapIntent = Intent(baseContext, Maps::class.java)
+
+        mapButton.setOnClickListener {
+            startActivity(mapIntent)
         }
 
         val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
